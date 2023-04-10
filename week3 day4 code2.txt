@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        double a = sc.nextDouble();
+        double b = a + a/10;
+        double c = b/12;
+        System.out.printf("%.0f",b);
+        System.out.println();
+        System.out.printf("%.2f",c);
+    }
+}

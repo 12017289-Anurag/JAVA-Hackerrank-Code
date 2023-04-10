@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner obj = new Scanner(System.in);
+        int a = obj.nextInt();
+        int c=0;
+        if(a != 1 && a != 0)
+        {
+            for(int i=2;i<=a-1;i++)
+            {
+                if(a%i==0)
+                {
+                    System.out.println("Not prime number");
+                    break;
+                }
+            }
+        }
+        else 
+        {
+            System.out.println("Prime number");
+        }
+    }
+}

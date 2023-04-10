@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+class Employee {
+    int i;
+    int ag;
+    public Employee(int i, int ag) {
+        this.i = i;
+        this.ag = ag;
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n < 1 || n > 10) {
+            System.out.println("Invalid input");
+            return;
+        }
+        Employee[] employees = new Employee[n];
+        for (int j = 0; j < n; j++) {
+            int i = sc.nextInt();
+            int ag = sc.nextInt();
+            if (i < 10 || i > 1000 || ag < 18 || ag > 50) {
+                System.out.println("Invalid data");
+                return;
+            }
+            employees[j] = new Employee(i, ag);
+        }
+        boolean found = false;
+        for (Employee e : employees) {
+            if (e.ag < 30) {
+                System.out.println(e.i + " " + e.ag);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No employees found");
+        }
+    }
+}

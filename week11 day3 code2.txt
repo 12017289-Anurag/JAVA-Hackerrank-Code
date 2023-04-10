@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String s1 = input.nextLine();
+        String s2 = input.nextLine();
+        if (s1.length() <= 2 || s2.length() <= 2) {
+            System.out.println("Invalid Input");
+            return;
+        }int[] c1 = new int[26];
+        int[] c2 = new int[26];
+        for (int i = 0; i < s1.length(); i++) {
+            c1[s1.charAt(i) - 'a']++;}
+        for (int i = 0; i < s2.length(); i++) {
+            c2[s2.charAt(i) - 'a']++;}
+        boolean isAnagram = true;
+        for (int i = 0; i < 26; i++) {
+            if (c1[i] != c2[i]) {
+                isAnagram = false;
+                break;
+            }}
+        if (isAnagram) {
+            System.out.println("ANAGRAM");} else {
+            System.out.println("NOT ANAGRAM");}}}

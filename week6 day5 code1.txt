@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Student {
+    private String na;
+    private int registration;
+    public Student(String na, int registration) {
+        this.na = na;
+        this.registration = registration;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+        if (choice == 1) {
+            String na = scanner.next();
+            int registration = -1;
+            while (registration < 0) {
+                registration = scanner.nextInt();
+                if (registration < 0) {
+                    System.out.println("RegistrationNo should be positive value.");
+                }
+            }
+            Student student = new Student(na, registration);
+            System.out.println(student.na + "," + student.registration);
+        } else if (choice == 2) {
+            Student student = new Student(null, 0);
+            System.out.println(student.na + "," + student.registration);
+        } else {
+            System.out.println("Wrong Choice");
+        }
+    }
+}

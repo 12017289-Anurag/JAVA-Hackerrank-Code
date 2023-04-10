@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String S=sc.nextLine();
+        S=S.toLowerCase();
+        S=S.trim();
+        for(int i=0;i<S.length();i++)
+        {
+            if(S.charAt(i)!=' ')
+                System.out.print(S.charAt(i));
+            else
+                System.out.print('$');
+        }
+    }
+}

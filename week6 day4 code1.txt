@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        double[][] mark = new double[n][3];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 3; j++) {
+                mark[i][j] = sc.nextDouble();
+            }
+        }
+        double[] average = average_marks(mark);
+        for (double avg : average) {
+            System.out.print(avg + " ");}}
+    public static double[] average_marks(double[][] mark) {
+        double[] average = new double[mark.length];
+        for (int i = 0; i < mark.length; i++) {
+            Arrays.sort(mark[i]);
+            double sum = mark[i][1] + mark[i][2];
+            average[i] = sum / 2.0;}return average;
+    }
+}

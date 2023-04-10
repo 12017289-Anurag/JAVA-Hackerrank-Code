@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Outer_Calculator {
+    static class Inner_Calculator {
+        public static int addition(int n1, int n2) {
+            return n1 + n2;}
+        public static int subtraction(int n1, int n2) {
+            return n1 - n2;}
+        public static int multiplication(int n1, int n2) {
+            return n1 * n2;
+        }public static int division(int n1, int n2) {
+            return n1 / n2;}}
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n1 = input.nextInt();
+        int n2 = input.nextInt();
+        String operator = input.next();
+        int result;
+        switch(operator) {
+            case "+":
+                result = Inner_Calculator.addition(n1, n2);
+                break;
+            case "-":
+                result = Inner_Calculator.subtraction(n1, n2);
+                break;
+            case "*":
+                result = Inner_Calculator.multiplication(n1, n2);
+                break;
+            case "/":
+                result = Inner_Calculator.division(n1, n2);
+                break;
+            default:
+                System.out.println("invalid operator");
+                return;}
+System.out.println(result);
+    }
+}

@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n <= 0) {
+            System.out.println("Invalid");
+            return;
+        }
+        String[] arr = new String[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.next();
+        }
+        int intCount = 0;
+        int alphaCount = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i].matches("\\d+")) {
+                intCount++;
+            } else if (arr[i].matches("[a-zA-Z]+")) {
+                alphaCount++;
+            }
+        }
+        System.out.println(intCount);
+        System.out.println( alphaCount);
+    }
+}

@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class StringCharacterCounter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+
+        if (input.length() <= 5) {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        char[] chars = input.toCharArray();
+        Arrays.sort(chars);
+
+        char currentCh = chars[0];
+        int currentCo = 1;
+        for (int i = 1; i < chars.length; i++) {
+            if (chars[i] == currentCh) {
+                currentCo++;
+            } else {
+                System.out.print(currentCh + "" + currentCo);
+                currentCh = chars[i];
+                currentCo = 1;
+            }
+        }
+        System.out.print(currentCh + "" + currentCo);
+    }
+}

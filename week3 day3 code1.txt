@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class Solution {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int amo = sc.nextInt();
+    if (amo % 100 != 0 || amo < 100 || amo > 20000) {
+      System.out.println("Invalid Input");
+      return;
+    }
+
+    int[] note = new int[]{2000, 500, 200, 100};
+    int[] noteCount = new int[4];
+    for (int i = 0; i < 4; i++) {
+      if (amo >= note[i]) 
+      {noteCount[i] = amo / note[i];
+        amo = amo % note[i];}
+    }
+
+    for (int i = 3; i >= 0; i--) {
+      if (noteCount[i] != 0) {
+        System.out.println(noteCount[i] + " " + note[i] + " Notes");}
+    }
+  }
+}

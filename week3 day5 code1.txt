@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class BankTransaction {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    float bal = sc.nextFloat();
+    int choice = sc.nextInt();
+
+    if (choice == 1) {
+      float amount = sc.nextFloat();
+      bal -= amount;
+      System.out.printf("%.2f",bal);
+        System.out.println();
+    } else if (choice == 2) {
+      float amount = sc.nextFloat();
+      bal += amount;
+      System.out.printf("%.2f",bal);
+        System.out.println();
+    } else {
+      System.out.println("Error");
+    }
+  }
+}

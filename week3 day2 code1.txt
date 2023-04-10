@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.next();
+        String str2 = sc.next();
+        int[] chC1 = new int[26];
+        int[] chC2 = new int[26];
+        for (int i = 0; i < str1.length(); i++) {
+            chC1[str1.charAt(i) - 'a']++;
+        }
+        for (int i = 0; i < str2.length(); i++) {
+            chC2[str2.charAt(i) - 'a']++;
+        }
+        Arrays.sort(chC1);
+        Arrays.sort(chC2);
+        if (Arrays.equals(chC1, chC2)) {
+            System.out.println("Similar");
+        } else {
+            System.out.println("Not Similar");
+        }
+    }
+}

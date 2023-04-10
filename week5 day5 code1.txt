@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numOfSubjects = sc.nextInt();
+        if(numOfSubjects<=7)
+        {
+        double totalMarks = 0;
+        for (int i = 0; i < numOfSubjects; i++) {
+            totalMarks += sc.nextDouble();
+        }
+        double percentageMarks = (totalMarks / (numOfSubjects * 100)) * 100;
+        char grade;
+        if (percentageMarks > 90) {
+            grade = 'A';
+        } else if (percentageMarks >= 70 && percentageMarks <= 89) {
+            grade = 'A';
+        } else if (percentageMarks >= 60 && percentageMarks <= 69) {
+            grade = 'B';
+        } else if (percentageMarks >= 50 && percentageMarks <= 59) {
+            grade = 'C';
+        } else {
+            grade = 'D';
+        }
+        System.out.println(grade);
+        sc.close();}
+        else
+            System.out.println("Invalid");
+            
+    }
+}
